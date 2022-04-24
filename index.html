@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>FE Bootcamp Project 3</title>
+  </head>
+  <body>
+    <div class="list">
+      <div id="task-1" class="tasks"></div>
+    </div>
+    <div class="form">
+      <input type="text" id="pendingTask" class="pendingTask" />
+      <input type="button" id="add" value="add" />
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      var count = 0;
+      var tasks = undefined;
+
+      $("#add").click(function () {
+        var textbox = $("#pendingTask").val();
+        if (textbox.length > 0) {
+          var number = $(".tasks").length;
+          var new_number = number + 1;
+          var cloned_div = $("#task-" + number);
+
+          var $cloned = $(cloned_div)
+            .clone()
+            .attr("id", "task-" + new_number)
+            .insertAfter("#task-" + number);
+
+          // $(
+          //   "<img src='https://media.istockphoto.com/vectors/close-button-vector-close-icon-line-x-cross-in-circle-vector-id1136956471'/><p>Test</p>"
+          // ).insertAfter("#task-" + number);
+
+          // $("#task-" + new_number).append("HI");
+          $("#task-" + number)
+            .append("HI")
+            .css("display", "block")
+            .html($("#pendingTask").val());
+          $("#pendingTask").val("");
+        }
+        // $cloned.children().each(function () {
+        //   var $child = $(this);
+        //   var oldID = $child.attr("id");
+        //   var newID = oldID.replace(/[0-9]+$/, new_amount); // replace just the number, leave the rest of the ID name in tact
+        //   $child.attr("id", newID);
+        // });
+      });
+      $(".list").on("click", "div", function () {
+        $(this).toggleClass("strike");
+      });
+
+      console.log("document ready");
+    });
+  </script>
+</html>
