@@ -1,27 +1,52 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+}
 .tasks {
-  width: 95%;
+  width: auto;
   display: none;
   margin: 20px;
   border: 3px solid #73ad21;
   background-color: #73ad21;
-  height: 30px;
+  color: white;
+  padding: 10px;
+  min-height: 30px;
+  border-radius: 10px;
+}
+h1 {
+  text-align: center;
 }
 .list {
-  height: 300px;
+  height: 700px;
   overflow: scroll;
   margin: auto;
   width: 60%;
-  border: 3px solid #73ad21;
   padding: 10px;
+  border: 1px solid grey;
+  text-align: center;
 }
 .form {
   margin: auto;
   text-align: center;
   padding-top: 30px;
+  vertical-align: bottom;
 }
 .strike {
   text-decoration: line-through;
   background-color: #c9e3a5;
   border: 3px solid #c9e3a5;
   color: grey;
+}
+.pendingTask {
+  width: 40%;
+  height: 30px;
+}
+.button {
+  background-color: rgb(255, 89, 0);
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+  border: 0px;
+  font-size: 20px;
+  font-weight: 600;
+  width: 120px;
 }
