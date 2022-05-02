@@ -50,3 +50,10 @@ h1 {
   font-weight: 600;
   width: 120px;
 }
+
+.elements {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
