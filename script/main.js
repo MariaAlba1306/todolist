@@ -10,6 +10,7 @@ $(document).ready(function () {
       cloneTask();
     }
   });
+  //Cloning task function
   function cloneTask() {
     var textbox = $("#pendingTask").val();
     if (textbox.length > 0) {
@@ -20,8 +21,6 @@ $(document).ready(function () {
         .clone()
         .attr("id", "task-" + new_number);
       $("#task-" + number).css("display", "block");
-
-      // $(".elements").append(`<p class="text${new_number}"></p>`);
       $("#task-" + number).append(`<div class="elements">
                 <img
                   src="./close.png"
@@ -30,7 +29,6 @@ $(document).ready(function () {
                 /><p>${$("#pendingTask").val()}</p>
               </div>`);
 
-      // $(`.text${new_number}`).html($("#pendingTask").val());
       $("#pendingTask").val("");
       $($cloned).insertAfter("#task-" + number);
     }
